@@ -1,0 +1,14 @@
+{
+    "name": "pleio/pinboard",
+    "description": "A side-wide pinboard",
+    "type": "elgg-plugin",
+    "keywords": ["elgg", "plugin", "pinboard"],
+    "license": "GPL-2.0",
+    "support": {
+        "source": "https://github.com/Pleio/pinboard",
+        "issues": "https://github.com/Pleio/pinboard/issues"
+    },
+    "require": {
+        "composer/installers": "^1.0.8"
+    }
+}
