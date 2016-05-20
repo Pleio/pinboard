@@ -6,7 +6,7 @@ $cafe = elgg_extract("entity", $vars, false);
 $poster = $cafe->getOwnerEntity();
 $poster_icon = elgg_view_entity_icon($poster, "small");
 $poster_link = elgg_view("output/url", array("text" => $poster->name, "href" => $poster->getURL(), "is_trusted" => true));
-$poster_text = elgg_echo("theme_ffd:cafe:placed_by") . "&nbsp;" . $poster_link;
+$poster_text = elgg_echo("pinboard:placed_by") . "&nbsp;" . $poster_link;
 
 $date = elgg_view_friendly_time($cafe->time_created);
 $subtitle = "$poster_text $date";
@@ -22,12 +22,12 @@ if ($full) {
     ));
 
     $params['metadata'] = $entity_menu;
-    $params['title'] = elgg_echo("theme_ffd:cafe:purpose:" . $cafe->purpose) . "&nbsp;" . $cafe->title;
+    $params['title'] = elgg_echo("pinboard:purpose:" . $cafe->purpose) . "&nbsp;" . $cafe->title;
     $params['content'] = $cafe->description;
 } else {
     $params['title'] = elgg_view('output/url', array(
         'href' => $cafe->getURL(),
-        'text' => elgg_echo("theme_ffd:cafe:purpose:" . $cafe->purpose) . "&nbsp;" . $cafe->title
+        'text' => elgg_echo("pinboard:purpose:" . $cafe->purpose) . "&nbsp;" . $cafe->title
     ));
     $params['content'] = elgg_get_excerpt($cafe->description);
 
@@ -37,7 +37,7 @@ if ($full) {
         $last_commenter_link = elgg_view("output/url", array("text" => $last_commenter->name, "href" => $last_commenter->getURL()));
         $last_comment_time = elgg_view_friendly_time($last_comment->time_created);
 
-        $answered_by = elgg_echo('theme_ffd:cafe:answered_by');
+        $answered_by = elgg_echo('pinboard:answered_by');
         $subtitle .= "<br />$answered_by $last_commenter_link $last_comment_time";
     }
 }

@@ -26,4 +26,13 @@ class ElggCafe extends ElggObject {
             return false;
         }
     }
+
+    public function countComments() {
+        return elgg_get_entities(array(
+            'type' => 'object',
+            'subtype' => 'comment',
+            'container_guid' => $this->guid,
+            'count' => true
+        ));
+    }
 }

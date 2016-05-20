@@ -9,15 +9,15 @@ if (!$cafe instanceof ElggCafe) {
 }
 
 if (!$cafe->canEdit()) {
-    register_error(elgg_echo("theme_ffd:cafe:nopermissions"));
+    register_error(elgg_echo("pinboard:nopermissions"));
     forward(REFERER);
 }
 
 $result = $cafe->delete();
 if ($result) {
-    system_message(elgg_echo("theme_ffd:cafe:deleted"));
+    system_message(elgg_echo("pinboard:deleted"));
 } else {
-    register_error(elgg_echo("theme_ffd:cafe:notdeleted"));
+    register_error(elgg_echo("pinboard:notdeleted"));
 }
 
-forward('cafe');
+forward('/pinboard');

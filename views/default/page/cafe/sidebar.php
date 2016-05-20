@@ -32,7 +32,7 @@ if (function_exists('theme_ffd_fivestar_get_top_users')):
             <?php if ($user->briefdescription): ?>
                 <?php echo $user->briefdescription; ?>
             <?php else: ?>
-                <?php echo elgg_echo("theme_ffd:cafe:no_short_description"); ?>
+                <?php echo elgg_echo("pinboard:no_short_description"); ?>
             <?php endif ?><br />
         </div>
     <?php endif ?>
@@ -42,7 +42,7 @@ if (function_exists('theme_ffd_fivestar_get_top_users')):
         $text = elgg_view("output/img", array(
                 "src" => THEME_GRAPHICS . "users.png"
         ));
-        $text .= "<span>" . elgg_echo("theme_ffd:cafe:searchmembers") . "</span>";
+        $text .= "<span>" . elgg_echo("pinboard:searchmembers") . "</span>";
 
         echo elgg_view("output/url", array(
             "text" => $text,

@@ -15,7 +15,7 @@ if (!$cafe instanceof ElggCafe) {
 }
 
 if ($editing && !$cafe->canEdit()) {
-    register_error(elgg_echo("theme_ffd:cafe:nopermissions"));
+    register_error(elgg_echo("pinboard:nopermissions"));
     forward(REFERER);
 }
 
@@ -29,7 +29,7 @@ if ($editing && ($container_guid != $cafe->getContainerGUID())) {
 }
 
 if ($adding && !can_write_to_container(0, $container_guid, "object", "cafe")) {
-    register_error(elgg_echo("theme_ffd:cafe:nopermissions"));
+    register_error(elgg_echo("pinboard:nopermissions"));
     forward(REFERER);
 }
 
@@ -44,7 +44,7 @@ if (strlen($title) > 60) {
 }
 
 if (empty($container_guid) || empty($title) || empty($description) || empty($purpose)) {
-    register_error(elgg_echo("theme_ffd:cafe:fieldsmissing"));
+    register_error(elgg_echo("pinboard:fieldsmissing"));
     forward(REFERER);
 }
 
@@ -59,10 +59,10 @@ $cafe->container_guid = $container_guid;
 $result = $cafe->save();
 
 if ($result) {
-    system_message(elgg_echo("theme_ffd:cafe:saved"));
+    system_message(elgg_echo("pinboard:saved"));
     elgg_clear_sticky_form("cafe");
 } else {
-    register_error(elgg_echo("theme_ffd:cafe:notsaved"));
+    register_error(elgg_echo("pinboard:notsaved"));
 }
 
-forward('/cafe');
+forward('/pinboard');

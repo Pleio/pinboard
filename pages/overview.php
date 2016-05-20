@@ -57,4 +57,4 @@ $body = elgg_view_layout('content', array(
     'filter_context' => $filter_context
 ));
 
-echo elgg_view_page(elgg_echo('theme_ffd:cafe'), $body);
+echo elgg_view_page(elgg_echo('pinboard'), $body);

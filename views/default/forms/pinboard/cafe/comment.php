@@ -24,6 +24,6 @@ if ($cafe) {
         
 <?php
     echo elgg_view("input/submit", array(
-        'value' => elgg_echo('theme_ffd:cafe:publish')
+        'value' => elgg_echo('pinboard:publish')
     ));
 ?>

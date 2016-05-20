@@ -21,4 +21,4 @@ $options = array(
 $output = elgg_view_form('theme_ffd/cafe', $options, array('entity' => $cafe));
 
 $content = elgg_view_layout('one_column', array('content' => $output));
-echo elgg_view_page(elgg_echo('theme_ffd:cafe'), $content);
+echo elgg_view_page(elgg_echo('pinboard'), $content);
