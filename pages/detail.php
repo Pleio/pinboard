@@ -13,8 +13,6 @@ if (!$entity | !$entity instanceof ElggCafe) {
     forward(REFERER);
 }
 
-elgg_push_breadcrumb($entity->title);
-
 $content = elgg_view_layout('one_column', array(
     'content' => elgg_view('pinboard/pages/detail', array(
         'entity' => $entity

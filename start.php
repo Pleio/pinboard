@@ -37,12 +37,10 @@ function pinboard_init() {
     switch($segments[0]) {
         case "detail":
             set_input('guid', $segments[1]);
-            elgg_push_breadcrumb(elgg_echo('pinboard'), 'cafe');
             include(dirname(__FILE__) . "/pages/detail.php");
             break;
         case "edit":
             set_input('guid', $segments[1]);
-            elgg_push_breadcrumb(elgg_echo('pinboard'), 'cafe');
             include(dirname(__FILE__) . "/pages/edit.php");
             break;
         case "owner":
@@ -51,7 +49,6 @@ function pinboard_init() {
             set_input('purpose', $segments[1]);
         case "all":
         default:
-            elgg_push_breadcrumb(elgg_echo('pinboard'));
             include(dirname(__FILE__) . "/pages/overview.php");
             break;
     }
