@@ -22,8 +22,8 @@ $comments = elgg_list_entities($options);
 echo elgg_view_module('info', $comments_title, $comments, array("class" => "mtm ffd-answers"));
 
 if (elgg_is_logged_in()) {
-    $entity_comment = elgg_view_form('theme_ffd/cafe/comment', array(
-        'name' => 'cafe_comment',
+    $entity_comment = elgg_view_form('pinboard/comment', array(
+        'name' => 'pinboard_comment',
         'action' => 'action/comment/save'
     ), array(
         'cafe' => $entity

@@ -61,6 +61,10 @@ $result = $cafe->save();
 if ($result) {
     system_message(elgg_echo("pinboard:saved"));
     elgg_clear_sticky_form("cafe");
+
+    if ($guid) {
+        forward($cafe->getURL());
+    }
 } else {
     register_error(elgg_echo("pinboard:notsaved"));
 }

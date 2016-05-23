@@ -6,19 +6,19 @@
  */
 
 $guid = get_input('guid');
-$cafe = get_entity($guid);
+$entity = get_entity($guid);
 
-if (!$cafe | !$cafe instanceof ElggCafe) {
+if (!$entity | !$entity instanceof ElggCafe) {
     register_error(elgg_echo("InvalidParameterException:NoEntityFound"));
     forward(REFERER);
 }
 
 $options = array(
-        'name' => 'cafe',
-        'action' => 'action/cafe/save'
+        'name' => 'pinboard',
+        'action' => 'action/pinboard/save'
 );
 
-$output = elgg_view_form('theme_ffd/cafe', $options, array('entity' => $cafe));
+$output = elgg_view_form('pinboard/save', $options, array('entity' => $entity));
 
 $content = elgg_view_layout('one_column', array('content' => $output));
 echo elgg_view_page(elgg_echo('pinboard'), $content);
